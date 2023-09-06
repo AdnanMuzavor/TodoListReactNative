@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import Todo from "../Components/Todo";
 import * as Notifications from "expo-notifications";
+import Button1 from "../Components/Button1";
 Notifications.setNotificationHandler({
   handleNotification: async () => {
     return {
@@ -32,12 +33,10 @@ const Addtodo = () => {
     console.log(todos);
   };
   const DeleteTodo = (id) => {
-
     const newList = todos.filter((e) => e.key !== id);
     settodos(newList);
   };
   const RenderTodo = (item) => {
-   
     return <Todo text={item.message} onPress={DeleteTodo} id={item.key} />;
   };
   //__________________Notification________________________
@@ -141,23 +140,17 @@ const Addtodo = () => {
           onChangeText={(value) => settext(value)}
           value={text}
         ></TextInput>
-     
-        <Button
-         
-          onPress={AddTodoToList}
-          title="Add Todo"
-        ></Button>
-        <Button
-          
-          onPress={scheduleNotificationHandler}
-          title="Add Notification"
-        ></Button>
-        </View>
-        {/* <Button
+
+        <Button1 onPress={AddTodoToList}>Add Todo</Button1>
+        <Button1 onPress={scheduleNotificationHandler}>
+          Add Notification
+        </Button1>
+      </View>
+      {/* <Button
           onPress={sendPushNotifications}
           title="Add Push Notification"
         ></Button> */}
-   
+
       <FlatList
         data={todos}
         keyExtractor={(item) => item.key}
@@ -171,7 +164,7 @@ export default Addtodo;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop:10,
+    marginTop: 10,
     flex: 1,
   },
   inputwrapper: {
@@ -197,8 +190,8 @@ const styles = StyleSheet.create({
   },
   btn: {
     margin: 10,
-    flexDirection:'column',
-    justifyContent:'space-between',
-    flex:1
+    flexDirection: "column",
+    justifyContent: "space-between",
+    flex: 1,
   },
 });
