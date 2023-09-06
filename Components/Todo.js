@@ -1,10 +1,11 @@
-import { View, Button, Text, StyleSheet } from "react-native";
+import { View, Button, StyleSheet } from "react-native";
+import TextC from "./TextC";
 
 const Todo = ({ text, onPress, id }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.txt}>{text}</Text>
+      <TextC>{text}</TextC>
       <Button title="Delete" onPress={() => onPress(id)}></Button>
     </View>
   );
@@ -24,10 +25,5 @@ const styles = StyleSheet.create({
     backgroundColor: "yellow",
     borderRadius: 4,
   },
-  txt: {
-    textAlign: "center",
-    color: "red",
-    fontWeight: "bold",
-    fontSize: 16,
-  },
+
 });
