@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet } from "react-native";
+import { Pressable, StyleSheet,Text } from "react-native";
 
 const Button1 = ({ children, onPress }) => {
   return (
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     borderColor: "red",
     borderRadius: 5,
     backgroundColor: "yellow",
+    margin:10,
   },
   text: {
     color: "red",
